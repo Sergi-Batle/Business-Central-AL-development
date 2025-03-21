@@ -14,7 +14,7 @@ pageextension 50120 Pinga extends "Customer Card"
 codeunit 50120 CodeTest
 {
     SingleInstance = true;
-     procedure increaseCounter()
+    procedure increaseCounter()
     begin
         Contador += 1;
         Message('Contador: %1', Contador);
