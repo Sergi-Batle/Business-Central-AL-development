@@ -15,9 +15,11 @@ codeunit 50149 "Customer Overview Mgmt"
             repeat
                 if Customer.FindSet() then
                     repeat
+                        
                         GLEntry.SetRange("Source Type", GLEntry."Source Type"::Customer);
                         GLEntry.SetRange("Source Code", SourceCode.Code);
                         GLEntry.SetRange("Source No.", Customer."No.");
+                        GLEntry.SetFilter("Amount", '>1');
                         if GLEntry.FindSet() then begin
                             GLEntry.CalcSums(GLEntry.Amount);
                             CustomerOverview."Entry No." := NextEntryNo;

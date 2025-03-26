@@ -49,7 +49,8 @@ page 50133 "Customer Overview List"
     }
 
 
-    actions {
+    actions
+    {
         area(Processing)
         {
             action("Import Records")
@@ -73,7 +74,30 @@ page 50133 "Customer Overview List"
                     Registros.DeleteAll(true);
                 end;
             }
+
+
+        }
+
+        area(Reporting)
+        {
+            action("Customer Overview Report")
+            {
+                // ApplicationArea = All;
+                // trigger OnAction()
+                // begin
+                //     Report.Run(50133, true, false);
+                // end;
+
+
+
+
+                ApplicationArea = Basic, Suite;
+                Caption = 'Customer Overview Report';
+                Image = "Report";
+                RunObject = Report "Customer Overview Report";
+                ToolTip = 'View which customers purchase the most or owe the most in a selected period. Only customers that have either purchases during the period or a balance at the end of the period will be included.';
+
+            }
         }
     }
-
 }

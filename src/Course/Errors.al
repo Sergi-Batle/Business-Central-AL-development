@@ -8,7 +8,7 @@ pageextension 50118 CollectingErrorsExt extends "Customer List"
         addfirst(processing)
         {
 
-            action("Tu puta madre")
+            action("Selector")
             {
                 ApplicationArea = All;
                 trigger OnAction()
